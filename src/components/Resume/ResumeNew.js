@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
@@ -42,15 +41,21 @@ function ResumeNew() {
 
         {/* 🔥 Top Download Button */}
         <Row style={{ justifyContent: "center", marginBottom: "20px" }}>
-          <Button
-            variant="primary"
+          <a
             href={resumeLink}
             target="_blank"
-            style={{ maxWidth: "250px" }}
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+            style={{
+              maxWidth: "250px",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+            }}
           >
             <AiOutlineDownload />
             &nbsp;Download CV
-          </Button>
+          </a>
         </Row>
 
         {/* 📄 PDF CENTER VIEW */}
@@ -93,15 +98,21 @@ function ResumeNew() {
 
         {/* 🔥 Bottom Download Button */}
         <Row style={{ justifyContent: "center", marginTop: "20px" }}>
-          <Button
-            variant="primary"
+          <a
             href={resumeLink}
             target="_blank"
-            style={{ maxWidth: "250px" }}
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+            style={{
+              maxWidth: "250px",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+            }}
           >
             <AiOutlineDownload />
             &nbsp;Download CV
-          </Button>
+          </a>
         </Row>
       </Container>
     </div>

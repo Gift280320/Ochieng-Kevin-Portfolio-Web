@@ -8,7 +8,8 @@ import schoolMgmt from "../../Assets/Projects/school-management.png";
 import ellyCrotchets from "../../Assets/Projects/elly-crochets.png";
 import medicalChatbot from "../../Assets/Projects/medical-chatbot.png";
 import propertyMgmt from "../../Assets/Projects/property-manager.png";
-import mealPlanner from "../../Assets/Projects/meal-planner.png";
+import mealPlanner from "../../Assets/Projects/idpmp.png";
+import idpmpDashboard from "../../Assets/Projects/idpmp.png";   // <-- your new screenshot
 
 function Projects() {
   return (
@@ -30,7 +31,6 @@ function Projects() {
               isBlog={false}
               title="School Management System"
               description="A full-featured system for managing student records, courses, teachers, and fees. Built with React.js, Node.js, and MongoDB."
-              ghLink="https://github.com/Gift280320/School-Management-System.git"
               demoLink="https://school-management-system-pi-livid.vercel.app/"
             />
           </Col>
@@ -42,7 +42,6 @@ function Projects() {
               isBlog={false}
               title="Elly's Crotchets Ecommerce"
               description="An online store for buying custom crocheted products. Built with React.js and integrated with a payment gateway for seamless purchases."
-              ghLink="https://github.com/Gift280320/Elly-s-Crotchets.git"
               demoLink="https://elly-s-crotchets.vercel.app/"
             />
           </Col>
@@ -54,7 +53,6 @@ function Projects() {
               isBlog={false}
               title="Medical Consultation Chatbot"
               description="An AI-powered chatbot for medical consultation. Built with Python, Streamlit, and integrated with NLP models for accurate responses."
-              ghLink="https://github.com/Gift280320/medical-chatbot.git"
               demoLink="https://huggingface.co/spaces/Gift254/medical-chatbot"
             />
           </Col>
@@ -66,7 +64,6 @@ function Projects() {
               isBlog={false}
               title="Mwaura Property Management Website"
               description="A web application for managing properties, tenants, and rental payments. Built with React.js, Node.js, and Firebase for backend services."
-              ghLink="https://github.com/Gift280320/Property-Management-Website.git"
               demoLink="https://ubiquitous-rolypoly-401f23.netlify.app/"
             />
           </Col>
@@ -78,8 +75,18 @@ function Projects() {
               isBlog={false}
               title="Kenyan Weekly Meal Planner"
               description="A meal planning app that helps users plan nutritious meals for the week. Built with React.js and Tailwind CSS."
-              ghLink="https://github.com/Gift280320/Meal-Planner.git"
               demoLink="https://merry-jelly-1378ae.netlify.app/"
+            />
+          </Col>
+
+          {/* ========== NEW PROJECT ========== */}
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={idpmpDashboard}                          // your screenshot
+              isBlog={false}
+              title="IDPMP – Integrated Development Project Management & Monitoring Platform"
+              description="A government‑grade M&E platform with 9 user roles, AI‑powered project health insights, budget tracking, GIS county maps, risk register, document management, and executive dashboards. Built with React, Node.js, PostgreSQL, and deployed on Vercel/Render."
+              demoLink="https://me-monitoring-system.vercel.app"
             />
           </Col>
         </Row>
