@@ -14,55 +14,88 @@ import {
 
 function Home() {
   return (
-    <section>
+    <>
       <Container fluid className="home-section" id="home">
         <Particle />
 
         <Container className="home-content">
-          <Row>
+          <Row className="align-items-center">
+
             <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There! <span className="wave">👋🏻</span>
+              <h1 className="heading">
+                Hi There! <span className="wave">👋</span>
               </h1>
 
               <h1 className="heading-name">
-                I'M <strong className="main-name">OCHIENG KEVIN MADARA</strong>
+                I'M
+                <br />
+                <strong className="main-name">
+                  OCHIENG KEVIN MADARA
+                </strong>
               </h1>
 
-              <div style={{ padding: 50, textAlign: "left" }}>
+              <div
+                style={{
+                  paddingTop: "35px",
+                  paddingLeft: "50px",
+                }}
+              >
                 <Type />
               </div>
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
+            <Col
+              md={5}
+              className="text-center"
+              style={{ paddingTop: "30px" }}
+            >
               <img
                 src={homeLogo}
-                alt="home pic"
+                alt="Developer Illustration"
                 className="img-fluid"
-                style={{ maxHeight: "450px" }}
+                style={{
+                  maxHeight: "500px",
+                  width: "100%",
+                  objectFit: "contain",
+                }}
               />
             </Col>
+
           </Row>
         </Container>
       </Container>
 
       <Home2 />
 
+      {/* SOCIAL SECTION */}
+
       <Container>
-        <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
+        <Row
+          style={{
+            paddingTop: "60px",
+            paddingBottom: "90px",
+            justifyContent: "center",
+          }}
+        >
           <Col md={12} className="home-about-social">
-            <h1>Find Me On</h1>
-            <p>
-              Feel free to <span className="purple">connect</span> with me
+
+            <h1>
+              FIND ME <span className="purple">ONLINE</span>
+            </h1>
+
+            <p style={{ fontSize: "18px" }}>
+              Let's connect and build something amazing together.
             </p>
 
             <ul className="home-about-social-links">
+
               <li className="social-icons">
                 <a
                   href="https://facebook.com/Gift200M"
                   target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons facebook"
+                  rel="noopener noreferrer"
+                  className="facebook home-social-icons"
+                  aria-label="Facebook"
                 >
                   <FaFacebook />
                 </a>
@@ -72,8 +105,9 @@ function Home() {
                 <a
                   href="https://x.com/joan280320"
                   target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons twitter"
+                  rel="noopener noreferrer"
+                  className="twitter home-social-icons"
+                  aria-label="Twitter"
                 >
                   <FaXTwitter />
                 </a>
@@ -83,8 +117,9 @@ function Home() {
                 <a
                   href="https://www.linkedin.com/in/ochieng-kevin-madara/"
                   target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons linkedin"
+                  rel="noopener noreferrer"
+                  className="linkedin home-social-icons"
+                  aria-label="LinkedIn"
                 >
                   <FaLinkedinIn />
                 </a>
@@ -94,17 +129,20 @@ function Home() {
                 <a
                   href="https://www.instagram.com/gift200m"
                   target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons instagram"
+                  rel="noopener noreferrer"
+                  className="instagram home-social-icons"
+                  aria-label="Instagram"
                 >
                   <FaInstagram />
                 </a>
               </li>
+
             </ul>
+
           </Col>
         </Row>
       </Container>
-    </section>
+    </>
   );
 }
 

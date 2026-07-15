@@ -89,9 +89,13 @@ button:focus {
 
 .navbar {
   position: fixed !important;
-  transition: all 0.3s ease-out 0s !important;
-  padding: 0.3rem 2rem !important;
-  font-size: 1.2rem !important;
+  transition: all .3s ease !important;
+  padding: .55rem 2rem !important;
+  font-size: 1.05rem !important;
+  background: rgba(17,24,39,.88) !important;
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 10px 35px rgba(0,0,0,.35);
 }
 
 .navbar-toggler {
@@ -165,9 +169,15 @@ button:focus {
 }
 
 .navbar-nav .nav-link {
-  color: white !important;
-  padding-right: 1rem !important;
-  padding-left: 1rem !important;
+  color: #f8fafc !important;
+  padding: .7rem 1rem !important;
+  border-radius: 12px;
+  transition: .3s;
+}
+
+.navbar-nav .nav-link:hover{
+  background:#7c3aed;
+  color:white !important;
 }
 
 .nav-link {
@@ -270,7 +280,7 @@ button:focus {
 }
 
 .home-content {
-  padding: 9rem 0 2rem !important;
+  padding: 7rem 0 2rem !important;
   color: whitesmoke;
   text-align: left;
 }
@@ -330,7 +340,7 @@ button:focus {
 
 .home-about-description {
   color: white !important;
-  padding-top: 100px !important;
+  padding-top: 45px !important;
   padding-bottom: 20px !important;
   text-align: center;
 }
@@ -759,91 +769,3 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
-
-/* ===============================
-   PROFESSIONAL SOCIAL ICONS
-================================== */
-
-.home-social-icons,
-.footer-icons a{
-    width:52px;
-    height:52px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:#fff;
-    font-size:24px;
-    transition:.35s ease;
-    box-shadow:0 8px 18px rgba(0,0,0,.12);
-}
-
-.footer-icons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    padding:0;
-    margin:0;
-}
-
-.footer-icons li{
-    list-style:none;
-}
-
-/* Official colors */
-
-.facebook,
-.footer-facebook{
-    color:#1877F2!important;
-}
-
-.twitter,
-.footer-twitter{
-    color:#000!important;
-}
-
-.instagram,
-.footer-instagram{
-    color:#E4405F!important;
-}
-
-.linkedin,
-.footer-linkedin{
-    color:#0A66C2!important;
-}
-
-/* Hover animation */
-
-.home-social-icons:hover,
-.footer-icons a:hover{
-    transform:translateY(-6px) scale(1.15);
-    box-shadow:0 15px 35px rgba(0,0,0,.20);
-}
-
-
-/* ===== Colored Home Social Icons ===== */
-
-.home-about-social-links .social-icons:nth-child(1) .home-social-icons svg{
-color:#1877F2!important;
-}
-
-.home-about-social-links .social-icons:nth-child(2) .home-social-icons svg{
-color:#000!important;
-}
-
-.home-about-social-links .social-icons:nth-child(3) .home-social-icons svg{
-color:#0A66C2!important;
-}
-
-.home-about-social-links .social-icons:nth-child(4) .home-social-icons svg{
-color:#E4405F!important;
-}
-
-.home-about-social-links .home-social-icons{
-transition:.3s;
-}
-
-.home-about-social-links .home-social-icons:hover{
-transform:scale(1.18);
-}
-

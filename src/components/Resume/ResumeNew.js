@@ -5,99 +5,112 @@ import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
-// PDF in public folder
-const resumeLink = "/Ochieng_Kevin_Madara_CV.pdf";
+const resumeLink = process.env.PUBLIC_URL + "/Ochieng_Kevin_Madara_CV.pdf";
 
-// PDF worker
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ResumeNew() {
-  const [width, setWidth] = useState(1200);
+  const [width, setWidth] = useState(window.innerWidth);
   const [numPages, setNumPages] = useState(null);
 
   useEffect(() => {
-    setWidth(window.innerWidth);
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  function onDocumentLoadSuccess({ numPages }) {
+  const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages);
-  }
+  };
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = resumeLink;
+    link.download = "Ochieng_Kevin_Madara_CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
-    <div>
-      <Container
-        fluid
-        className="resume-section"
+    <Container fluid className="resume-section">
+      <Particle />
+
+      <Row
         style={{
           minHeight: "100vh",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          padding: "20px",
+          paddingTop: "110px",
+          paddingBottom: "40px",
         }}
       >
-        <Particle />
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Document
+            file={resumeLink}
+            onLoadSuccess={onDocumentLoadSuccess}
+            loading={<h4 style={{ color: "#fff" }}>Loading CV...</h4>}
+            error={<h4 style={{ color: "red" }}>Failed to load CV.</h4>}
+          >
+            {Array.from(new Array(numPages || 0), (_, index) => (
+              <Page
+                key={index}
+                pageNumber={index + 1}
+                width={
+                  width > 1200
+                    ? 900
+                    : width > 992
+                    ? 800
+                    : width > 768
+                    ? 650
+                    : width * 0.9
+                }
+                renderAnnotationLayer={false}
+                renderTextLayer={false}
+              />
+            ))}
+          </Document>
+        </div>
 
-        {/* PDF Viewer */}
-        <Row
-          className="resume"
+        <div
           style={{
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
             width: "100%",
+            marginTop: "35px",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              width: "100%",
-            }}
-          >
-            <Document
-              file={resumeLink}
-              onLoadSuccess={onDocumentLoadSuccess}
-              loading={<p style={{ textAlign: "center" }}>Loading CV...</p>}
-              error={
-                <p style={{ textAlign: "center", color: "red" }}>
-                  Failed to load CV
-                </p>
-              }
-            >
-              {Array.from(new Array(numPages), (el, index) => (
-                <Page
-                  key={`page_${index + 1}`}
-                  pageNumber={index + 1}
-                  scale={width > 786 ? 1.6 : 0.6}
-                />
-              ))}
-            </Document>
-          </div>
-        </Row>
-
-        {/* Bottom Download Button */}
-        <Row style={{ justifyContent: "center", marginTop: "20px" }}>
-          <a
-            href={resumeLink}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
             className="btn btn-primary"
-            download
+            onClick={handleDownload}
             style={{
-              maxWidth: "250px",
-              display: "inline-flex",
+              width: "220px",
+              height: "52px",
+              display: "flex",
               alignItems: "center",
-              gap: "8px",
+              justifyContent: "center",
+              gap: "10px",
+              fontSize: "17px",
+              fontWeight: "600",
+              borderRadius: "10px",
             }}
           >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </a>
-        </Row>
-      </Container>
-    </div>
+            <AiOutlineDownload size={22} />
+            Download CV
+          </button>
+        </div>
+      </Row>
+    </Container>
   );
 }
 

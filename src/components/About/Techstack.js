@@ -1,6 +1,5 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-
 import { SiNextdotjs } from "react-icons/si";
 
 import C from "../../Assets/TechIcons/C++.svg";
@@ -16,75 +15,85 @@ import Tailwind from "../../Assets/TechIcons/Tailwind.svg";
 import Postman from "../../Assets/TechIcons/Postman.svg";
 import AWS from "../../Assets/TechIcons/AWS.svg";
 
+const iconStyle = {
+  width: "42px",
+  height: "42px",
+  objectFit: "contain",
+};
+
 function Techstack() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={C} alt="C++" />
+    <Row
+      style={{
+        justifyContent: "center",
+        paddingBottom: "50px",
+        rowGap: "10px",
+      }}
+    >
+      <Col xs={6} md={3} lg={2} className="tech-icons">
+        <img src={C} alt="C++" style={iconStyle} />
         <div className="tech-icons-text">C++</div>
       </Col>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Javascript} alt="JavaScript" />
+      <Col xs={6} md={3} lg={2} className="tech-icons">
+        <img src={Javascript} alt="JavaScript" style={iconStyle} />
         <div className="tech-icons-text">JavaScript</div>
       </Col>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Python} alt="Python" />
+      <Col xs={6} md={3} lg={2} className="tech-icons">
+        <img src={Python} alt="Python" style={iconStyle} />
         <div className="tech-icons-text">Python</div>
       </Col>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <SiNextdotjs fontSize={"24px"} />
+      <Col xs={6} md={3} lg={2} className="tech-icons">
+        <SiNextdotjs size={42} color="#ffffff" />
         <div className="tech-icons-text">Next.js</div>
       </Col>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Node} alt="Node.js" />
+      <Col xs={6} md={3} lg={2} className="tech-icons">
+        <img src={Node} alt="Node.js" style={iconStyle} />
         <div className="tech-icons-text">Node.js</div>
       </Col>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={ReactIcon} alt="React" />
+      <Col xs={6} md={3} lg={2} className="tech-icons">
+        <img src={ReactIcon} alt="React.js" style={iconStyle} />
         <div className="tech-icons-text">React.js</div>
       </Col>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Firebase} alt="Firebase" />
+      <Col xs={6} md={3} lg={2} className="tech-icons">
+        <img src={Firebase} alt="Firebase" style={iconStyle} />
         <div className="tech-icons-text">Firebase</div>
       </Col>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Docker} alt="Docker" />
+      <Col xs={6} md={3} lg={2} className="tech-icons">
+        <img src={Docker} alt="Docker" style={iconStyle} />
         <div className="tech-icons-text">Docker</div>
       </Col>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={SQL} alt="SQL" />
+      <Col xs={6} md={3} lg={2} className="tech-icons">
+        <img src={SQL} alt="PostgreSQL" style={iconStyle} />
         <div className="tech-icons-text">PostgreSQL</div>
       </Col>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Java} alt="Java" />
+      <Col xs={6} md={3} lg={2} className="tech-icons">
+        <img src={Java} alt="Java" style={iconStyle} />
         <div className="tech-icons-text">Java</div>
       </Col>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Tailwind} alt="Tailwind CSS" />
+      <Col xs={6} md={3} lg={2} className="tech-icons">
+        <img src={Tailwind} alt="Tailwind CSS" style={iconStyle} />
         <div className="tech-icons-text">Tailwind CSS</div>
       </Col>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Postman} alt="Postman" />
+      <Col xs={6} md={3} lg={2} className="tech-icons">
+        <img src={Postman} alt="Postman" style={iconStyle} />
         <div className="tech-icons-text">Postman</div>
       </Col>
 
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={AWS} alt="AWS" className="tech-icon-images" />
+      <Col xs={6} md={3} lg={2} className="tech-icons">
+        <img src={AWS} alt="AWS" style={iconStyle} />
         <div className="tech-icons-text">AWS</div>
       </Col>
-
     </Row>
   );
 }
