@@ -1,68 +1,89 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import {
-  AiFillGithub,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+  FaFacebookF,
+  FaLinkedinIn,
+  FaInstagram,
+  FaXTwitter,
+} from "react-icons/fa6";
 
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
+  const year = new Date().getFullYear();
+
   return (
     <Container fluid className="footer">
-      <Row>
+      <Row className="align-items-center">
+
         <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed by Ochieng Kevin Madara</h3>
+          <h3>Designed & Developed by Ochieng Kevin Madara</h3>
         </Col>
+
         <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} Ochieng Kevin</h3>
+          <h3>Copyright © {year}</h3>
         </Col>
+
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
+
             <li className="social-icons">
               <a
-                href="https://github.com/Gift280320"
-                style={{ color: "white" }}
-                target="_blank" 
+                href="https://facebook.com/Gift200M"
+                target="_blank"
                 rel="noopener noreferrer"
+                className="icon-colour"
               >
-                <AiFillGithub />
+                <FaFacebookF
+                  size={28}
+                  style={{ color: "#1877F2" }}
+                />
               </a>
             </li>
+
             <li className="social-icons">
               <a
-                href="https://twitter.com/joan280320"
-                style={{ color: "white" }}
-                target="_blank" 
+                href="https://x.com/"
+                target="_blank"
                 rel="noopener noreferrer"
+                className="icon-colour"
               >
-                <AiOutlineTwitter />
+                <FaXTwitter
+                  size={28}
+                  style={{ color: "#000000" }}
+                />
               </a>
             </li>
+
             <li className="social-icons">
               <a
-                href="https://www.linkedin.com/in/Ochieng-Kevin-Madara/"
-                style={{ color: "white" }}
-                target="_blank" 
+                href="https://instagram.com/"
+                target="_blank"
                 rel="noopener noreferrer"
+                className="icon-colour"
               >
-                <FaLinkedinIn />
+                <FaInstagram
+                  size={28}
+                  style={{ color: "#E4405F" }}
+                />
               </a>
             </li>
+
             <li className="social-icons">
               <a
-                href="https://www.instagram.com/gift200m"
-                style={{ color: "white" }}
-                target="_blank" 
+                href="https://linkedin.com/"
+                target="_blank"
                 rel="noopener noreferrer"
+                className="icon-colour"
               >
-                <AiFillInstagram />
+                <FaLinkedinIn
+                  size={28}
+                  style={{ color: "#0A66C2" }}
+                />
               </a>
             </li>
+
           </ul>
         </Col>
+
       </Row>
     </Container>
   );

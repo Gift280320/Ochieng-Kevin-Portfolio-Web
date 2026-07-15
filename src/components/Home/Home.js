@@ -6,10 +6,10 @@ import Home2 from "./Home2";
 import Type from "./Type";
 
 import {
-  AiFillGithub,
+  FaFacebook,
   AiOutlineTwitter,
   AiFillInstagram,
-} from "react-icons/ai";
+} from "react-icons/fa";
 
 import { FaLinkedinIn } from "react-icons/fa";
 
@@ -60,12 +60,12 @@ function Home() {
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="https://github.com/Gift280320"
+                  href="https://facebook.com/Gift200M"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
                 >
-                  <AiFillGithub />
+                  <FaFacebook />
                 </a>
               </li>
 
