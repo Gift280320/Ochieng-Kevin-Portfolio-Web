@@ -5,10 +5,10 @@ import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
-// ✅ Public folder PDF
+// PDF in public folder
 const resumeLink = "/Ochieng_Kevin_Madara_CV.pdf";
 
-// ✅ PDF worker fix (important for Vercel / production)
+// PDF worker
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ResumeNew() {
@@ -39,26 +39,7 @@ function ResumeNew() {
       >
         <Particle />
 
-        {/* 🔥 Top Download Button */}
-        <Row style={{ justifyContent: "center", marginBottom: "20px" }}>
-          <a
-            href={resumeLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-            style={{
-              maxWidth: "250px",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-            }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </a>
-        </Row>
-
-        {/* 📄 PDF CENTER VIEW */}
+        {/* PDF Viewer */}
         <Row
           className="resume"
           style={{
@@ -96,13 +77,14 @@ function ResumeNew() {
           </div>
         </Row>
 
-        {/* 🔥 Bottom Download Button */}
+        {/* Bottom Download Button */}
         <Row style={{ justifyContent: "center", marginTop: "20px" }}>
           <a
             href={resumeLink}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary"
+            download
             style={{
               maxWidth: "250px",
               display: "inline-flex",

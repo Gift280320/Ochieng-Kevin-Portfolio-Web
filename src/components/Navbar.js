@@ -17,11 +17,7 @@ function NavBar() {
 
   useEffect(() => {
     const scrollHandler = () => {
-      if (window.scrollY >= 20) {
-        setNavColour(true);
-      } else {
-        setNavColour(false);
-      }
+      setNavColour(window.scrollY >= 20);
     };
 
     window.addEventListener("scroll", scrollHandler);
@@ -40,7 +36,11 @@ function NavBar() {
           <img
             src={logo}
             alt="Ochieng Kevin Madara"
-            style={{ height: "130px" }}
+            style={{
+              height: "78px",
+              width: "auto",
+              objectFit: "contain",
+            }}
           />
         </Navbar.Brand>
 
@@ -55,6 +55,7 @@ function NavBar() {
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
+
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => setExpand(false)}>
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
@@ -73,10 +74,8 @@ function NavBar() {
                 to="/project"
                 onClick={() => setExpand(false)}
               >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                Projects
+                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} />
+                {" "}Projects
               </Nav.Link>
             </Nav.Item>
 
@@ -89,6 +88,7 @@ function NavBar() {
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
             </Nav.Item>
+
           </Nav>
         </Navbar.Collapse>
       </Container>
