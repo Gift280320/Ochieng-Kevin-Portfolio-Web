@@ -7,11 +7,10 @@ import Type from "./Type";
 
 import {
   FaFacebook,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/fa";
-
-import { FaLinkedinIn } from "react-icons/fa";
+  FaXTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa6";
 
 function Home() {
   return (
@@ -63,7 +62,7 @@ function Home() {
                   href="https://facebook.com/Gift200M"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons"
+                  className="icon-colour home-social-icons facebook"
                 >
                   <FaFacebook />
                 </a>
@@ -71,12 +70,12 @@ function Home() {
 
               <li className="social-icons">
                 <a
-                  href="https://twitter.com/joan280320"
+                  href="https://x.com/joan280320"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons"
+                  className="icon-colour home-social-icons twitter"
                 >
-                  <AiOutlineTwitter />
+                  <FaXTwitter />
                 </a>
               </li>
 
@@ -85,7 +84,7 @@ function Home() {
                   href="https://www.linkedin.com/in/ochieng-kevin-madara/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons"
+                  className="icon-colour home-social-icons linkedin"
                 >
                   <FaLinkedinIn />
                 </a>
@@ -96,9 +95,9 @@ function Home() {
                   href="https://www.instagram.com/gift200m"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons"
+                  className="icon-colour home-social-icons instagram"
                 >
-                  <AiFillInstagram />
+                  <FaInstagram />
                 </a>
               </li>
             </ul>
