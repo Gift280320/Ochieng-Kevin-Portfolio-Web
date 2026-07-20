@@ -53,7 +53,7 @@ function WhatsAppButton() {
         )}
 
         <a
-          href="https://wa.me/254794712133?text=Hello%20Kevin,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
+          href="https://wa.me/254794712109?text=Hello%20Kevin,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
           target="_blank"
           rel="noopener noreferrer"
           onMouseEnter={() => setHover(true)}
